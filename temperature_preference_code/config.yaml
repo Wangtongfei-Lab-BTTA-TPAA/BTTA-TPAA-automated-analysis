@@ -1,0 +1,79 @@
+# Visible-light video path.
+# Note: Chinese characters in paths are not supported by the current workflow.
+video_path: sample_data\20211222AM-657-Dq-DCZ-Light.avi
+
+# Infrared video path.
+# Note: Chinese characters in paths are not supported by the current workflow.
+video_path2: sample_data\20211222AM-657-Dq-DCZ-IR.avi
+
+# Start and end time points.
+# Supported formats:
+#   - MM:SS
+#   - HH:MM:SS
+# Set end_time to None to process until the end of the video.
+start_time: 00:00
+end_time: None
+
+# Temperature range represented by the color bar, from top to bottom.
+temp_range: [55, 15]
+
+# Display delay between frames in milliseconds.
+# Use 1 for fast processing, or a larger value such as 30 for easier preview.
+waittime: 1
+
+# Number of equal regions used to divide each runway.
+region_nums: 30
+
+# Whether to display the binary segmentation mask.
+bin_img: True
+
+# Runway definitions.
+# Each runway uses four ordered points:
+#   [low-temperature point, high-temperature point, high-temperature point, low-temperature point]
+ps1: [[28, 382],
+      [556, 77],
+      [587, 129],
+      [54, 435]]
+ps2: [[596, 396],
+      [74, 43],
+      [42, 100],
+      [561, 450]]
+
+# Runways to process. Use [ps1], [ps2], or multiple runways such as [ps1, ps2].
+ps: [ps2]
+# ps: [ps1, ps2]
+
+# Number of hottest pixels used to estimate mouse temperature.
+pixel_max_n: 20
+
+# Erosion kernel size for shrinking the segmented mouse region.
+# Values smaller than 3 disable erosion.
+erode_kernel_size: 3
+
+# Width ratio used for local background temperature calculation.
+# Must be between 0 and 1, relative to runway width.
+region_th: 0.4
+
+# Rectangle length used to estimate local background temperature around the mouse.
+# Set to None to estimate this value from the current run.
+small_rect_l: 65.65
+# small_rect_l: None
+
+# Temperature color-bar ROI in [y_start, y_end, x_start, x_end].
+# Image origin is the upper-left corner.
+bar_roi: [10, 470, 659, 681]
+# Bar ROI used between 2024-12-03 and 2024-12-25:
+# bar_roi: [23, 457, 664, 684]
+# Bar ROI used before 2024-12-03:
+# bar_roi: [10, 470, 659, 681]
+
+# Difference threshold between frame and background.
+th: 50
+
+# Minimum mouse-area threshold.
+th_mouse_area: 200
+
+# Default outlier values. Change only when you know downstream effects.
+outlier: [-1, -1]
+outlier_temp: -1
+outlier_inwhichgrid: -1

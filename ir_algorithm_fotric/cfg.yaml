@@ -1,0 +1,76 @@
+################ main params ################
+
+# Input video file path or folder path.
+Data_path: ir_algorithm_fotric\sample_data
+
+# Accepted video formats.
+Fmts: [ '.mp4', '.avi' ]
+
+# Whether the input videos are runway videos.
+# Options: True, False.
+Runway_video: False
+
+# DeepLabCut project config path.
+# This must be an absolute path to a standard DLC project's config.yaml.
+# Choose the DLC project that matches the target video type.
+#Config_path: /GPFS/yuezhifeng_lab_permanent/share/wangtongfei_lab/do_not_rm/guangxian_mouse-0-2023-04-06/config.yaml
+Config_path: dlc_model/config.yaml
+
+# Temperature bar ROI: [y_start, y_end, x_start, x_end].
+# The image origin is the top-left corner.
+Bar_roi: [21, 745, 1001, 1015]
+
+# Optional polygon mask for the valid detection area.
+# Use at least three points ordered clockwise or counterclockwise.
+# Set to None to disable polygon masking.
+Mask_polygon_vertexs: None
+
+# Maximum and minimum temperatures shown by the temperature bar.
+Max_temp: 40
+Min_temp: 15
+
+# Temperature bar direction.
+# 0: low temperature at the top, high temperature at the bottom.
+# 1: high temperature at the top, low temperature at the bottom.
+Bar_mode: 1
+
+# Horizontal split position for separating two mice in non-runway videos.
+# Only used when Runway_video is False.
+Split_point: 0.5
+
+# Radius around each feature point for local temperature extraction.
+R: 10
+
+# Number of highest pixel values used for averaging inside the local region.
+# This should be smaller than the circular area defined by R.
+N: 10
+
+# Whether to show frames during processing.
+# GUI display is usually unavailable on Linux/headless systems.
+Show: True
+
+# Display delay between frames when Show is True, in milliseconds.
+Show_waittime: 1
+
+# Frequency ranges retained during FFT-based filtering.
+# Each pair is [low_index, high_index].
+Ranges: [[0, 10]]
+
+# Radius used when refining detected coordinates in non-runway videos.
+Refine_R: 10
+
+# Confidence thresholds for filtering DLC results.
+# Values correspond to feature points in order.
+Confidence_ths: [ 0.5, 0.5, 0.5 ]
+
+# Whether to exclude the temperature bar region during video splitting.
+Exclude_temp_bar: True
+
+# Feature point IDs treated as tail points in runway videos.
+# Valid values depend on the trained DLC model.
+# Only used when Runway_video is True.
+Tail_id: [ 1, 2 ]
+
+# Saved preview image quality. Range: 1-100.
+# Higher values improve quality but use more disk space.
+Saved_img_quality: 50
