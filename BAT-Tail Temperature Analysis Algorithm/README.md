@@ -1,4 +1,4 @@
-# Infrared Fotric Analysis
+# BAT-Tail Temperature Analysis Algorithm
 
 Infrared video-analysis pipeline for extracting mouse feature-point
 temperatures from Fotric-style thermal videos. The pipeline can split
@@ -24,7 +24,7 @@ temperature traces, and export CSV/figure results.
 ## Repository Structure
 
 ```text
-ir_algorithm_fotric/
+BAT-Tail Temperature Analysis Algorithm/
   1_processing.py       # Stage 1: split videos and run DeepLabCut prediction
   2_analysis.py         # Stage 2: extract and smooth temperature traces
   cfg.yaml              # Runtime configuration
@@ -42,7 +42,7 @@ workflow itself needs to change.
 During local use, the workflow expects two kinds of external folders:
 
 ```text
-ir_algorithm_fotric/
+BAT-Tail Temperature Analysis Algorithm/
   sample_data/          # local only: raw videos and generated outputs
   dlc_models/           # local only: trained DeepLabCut projects
 ```
@@ -50,7 +50,7 @@ ir_algorithm_fotric/
 Recommended local layout:
 
 ```text
-ir_algorithm_fotric/
+BAT-Tail Temperature Analysis Algorithm/
   sample_data/
     video_name.mp4
   dlc_models/
@@ -100,8 +100,8 @@ Most important fields:
 Example local paths:
 
 ```yaml
-Data_path: D:\path\to\ir_algorithm_fotric\sample_data
-Config_path: D:\path\to\ir_algorithm_fotric\dlc_models\your_dlc_project\config.yaml
+Data_path: D:\path\to\BAT-Tail Temperature Analysis Algorithm\sample_data
+Config_path: D:\path\to\BAT-Tail Temperature Analysis Algorithm\dlc_models\your_dlc_project\config.yaml
 ```
 
 Use an absolute path for `Config_path` when possible. Model training and project

@@ -1,4 +1,4 @@
-# Temperature Preference Analysis
+# Temperature Preference Analysis Algorithm
 
 Video-analysis pipeline for paired visible-light and infrared recordings from a
 mouse temperature-preference runway assay. The visible-light video is used for
@@ -23,7 +23,7 @@ body temperature and local background temperature.
 ## Repository Structure
 
 ```text
-temperature_preference_code/
+Temperature Preference Analysis Algorithm/
   main.py          # Main paired visible-light/infrared analysis workflow
   bg_repair.py     # Interactive helper for repairing generated backgrounds
   config.yaml      # Runtime configuration

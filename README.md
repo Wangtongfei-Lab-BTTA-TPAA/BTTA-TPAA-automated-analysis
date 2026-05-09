@@ -1,4 +1,4 @@
-# Video Analysis Methods
+# BTTA-TPAA-automated-analysis
 
 This repository contains two Python video-analysis workflows used for mouse
 thermal behavior and infrared temperature extraction.
@@ -7,8 +7,8 @@ thermal behavior and infrared temperature extraction.
 
 | Directory | Purpose | Main entry |
 | --- | --- | --- |
-| `ir_algorithm_fotric/` | Extract feature-point temperatures from Fotric-style infrared videos with DeepLabCut-assisted tracking. | `python 1_processing.py cfg.yaml`, then `python 2_analysis.py cfg.yaml` |
-| `temperature_preference_code/` | Analyze paired visible-light and infrared videos from a mouse temperature-preference runway assay. | `python main.py` |
+| `BAT-Tail Temperature Analysis Algorithm/` | Extract feature-point temperatures from Fotric-style infrared videos with DeepLabCut-assisted tracking. | `python 1_processing.py cfg.yaml`, then `python 2_analysis.py cfg.yaml` |
+| `Temperature Preference Analysis Algorithm/` | Analyze paired visible-light and infrared videos from a mouse temperature-preference runway assay. | `python main.py` |
 
 Each directory has its own README with configuration details, expected input
 layout, output files, and runtime notes.
@@ -19,12 +19,12 @@ layout, output files, and runtime notes.
 CIBR_WangtongfeiLab_method/
   README.md
   .gitignore
-  ir_algorithm_fotric/
+  BAT-Tail Temperature Analysis Algorithm/
     README.md
     cfg.yaml
     1_processing.py
     2_analysis.py
-  temperature_preference_code/
+  Temperature Preference Analysis Algorithm/
     README.md
     config.yaml
     main.py
@@ -36,24 +36,24 @@ CIBR_WangtongfeiLab_method/
 The workflows are regular Python scripts. Create a project-specific Python
 environment and install the dependencies listed in each algorithm README.
 
-The infrared Fotric workflow additionally depends on a trained DeepLabCut
-project. Keep trained models and raw videos outside version control unless a
-small public example is intentionally included.
+The BAT-Tail Temperature Analysis Algorithm additionally depends on a trained
+DeepLabCut project. Keep trained models and raw videos outside version control
+unless a small public example is intentionally included.
 
 ## Quick Start
 
-Infrared Fotric workflow:
+BAT-Tail Temperature Analysis Algorithm:
 
 ```powershell
-cd ir_algorithm_fotric
+cd "BAT-Tail Temperature Analysis Algorithm"
 python 1_processing.py cfg.yaml
 python 2_analysis.py cfg.yaml
 ```
 
-Temperature-preference workflow:
+Temperature Preference Analysis Algorithm:
 
 ```powershell
-cd temperature_preference_code
+cd "Temperature Preference Analysis Algorithm"
 python main.py
 ```
 
