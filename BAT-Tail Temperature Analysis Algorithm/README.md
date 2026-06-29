@@ -1,4 +1,4 @@
-# BAT-Tail Temperature Analysis Algorithm
+# BAT Temperature Analysis Algorithm
 
 Infrared video-analysis pipeline for extracting mouse feature-point
 temperatures from Fotric-style thermal videos. The pipeline can split
