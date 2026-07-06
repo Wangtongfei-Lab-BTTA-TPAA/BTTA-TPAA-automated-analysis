@@ -20,7 +20,7 @@ input video types for the two workflows:
 
 | Workflow | Example video | Description |
 | --- | --- | --- |
-| BAT tail temperature analysis | [Test-BAT.mp4](test_data/Test-BAT.mp4) | Infrared video used to demonstrate BAT tail temperature extraction. |
+| BAT temperature analysis | [Test-BAT.mp4](test_data/Test-BAT.mp4) | Infrared video used to demonstrate BAT temperature extraction. |
 | Temperature preference analysis | [Test-Tp-IR.avi](test_data/Test-Tp-IR.avi) | Infrared video from the temperature-preference assay. |
 | Temperature preference analysis | [Test-Tp-light.avi](test_data/Test-Tp-light.avi) | Optical RGB video paired with the TP infrared recording. |
 

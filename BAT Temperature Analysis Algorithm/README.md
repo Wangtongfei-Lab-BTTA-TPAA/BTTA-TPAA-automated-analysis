@@ -169,7 +169,7 @@ sample video:
 ```
 
 Use this file as an example of the infrared video format expected by the BAT
-tail temperature workflow. To run the pipeline with this sample, set
+temperature workflow. To run the pipeline with this sample, set
 `Data_path` in `cfg.yaml` to the sample video path, for example:
 
 ```yaml
