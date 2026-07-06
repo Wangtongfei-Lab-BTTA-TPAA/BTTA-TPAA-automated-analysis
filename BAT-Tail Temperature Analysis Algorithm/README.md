@@ -17,6 +17,7 @@ temperature traces, and export CSV/figure results.
 - [Configuration](#configuration)
 - [Quick Start](#quick-start)
 - [Input Layout](#input-layout)
+- [Test Data](#test-data)
 - [Output Layout](#output-layout)
 - [Related Papers](#related-papers)
 - [GitHub Packaging Notes](#github-packaging-notes)
@@ -24,7 +25,7 @@ temperature traces, and export CSV/figure results.
 ## Repository Structure
 
 ```text
-BAT-Tail Temperature Analysis Algorithm/
+BAT Temperature Analysis Algorithm/
   1_processing.py       # Stage 1: split videos and run DeepLabCut prediction
   2_analysis.py         # Stage 2: extract and smooth temperature traces
   cfg.yaml              # Runtime configuration
@@ -42,7 +43,7 @@ workflow itself needs to change.
 During local use, the workflow expects two kinds of external folders:
 
 ```text
-BAT-Tail Temperature Analysis Algorithm/
+BAT Temperature Analysis Algorithm/
   sample_data/          # local only: raw videos and generated outputs
   dlc_models/           # local only: trained DeepLabCut projects
 ```
@@ -50,7 +51,7 @@ BAT-Tail Temperature Analysis Algorithm/
 Recommended local layout:
 
 ```text
-BAT-Tail Temperature Analysis Algorithm/
+BAT Temperature Analysis Algorithm/
   sample_data/
     video_name.mp4
   dlc_models/
@@ -100,8 +101,8 @@ Most important fields:
 Example local paths:
 
 ```yaml
-Data_path: D:\path\to\BAT-Tail Temperature Analysis Algorithm\sample_data
-Config_path: D:\path\to\BAT-Tail Temperature Analysis Algorithm\dlc_models\your_dlc_project\config.yaml
+Data_path: D:\path\to\BAT Temperature Analysis Algorithm\sample_data
+Config_path: D:\path\to\BAT Temperature Analysis Algorithm\dlc_models\your_dlc_project\config.yaml
 ```
 
 Use an absolute path for `Config_path` when possible. Model training and project
@@ -157,6 +158,26 @@ sample_data/
 ```
 
 `split_line.jpg` shows candidate split positions and the configured split line.
+
+## Test Data
+
+The repository-level `test_data/` directory includes one small BAT infrared
+sample video:
+
+```text
+../test_data/Test-BAT.mp4
+```
+
+Use this file as an example of the infrared video format expected by the BAT
+tail temperature workflow. To run the pipeline with this sample, set
+`Data_path` in `cfg.yaml` to the sample video path, for example:
+
+```yaml
+Data_path: ..\test_data\Test-BAT.mp4
+```
+
+The BAT workflow still requires a trained DeepLabCut project. Update
+`Config_path` to the matching DLC project `config.yaml` before running.
 
 ## Output Layout
 

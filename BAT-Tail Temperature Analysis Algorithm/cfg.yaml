@@ -1,7 +1,7 @@
 ################ main params ################
 
 # Input video file path or folder path.
-Data_path: BAT-Tail Temperature Analysis Algorithm\sample_data
+Data_path: BAT Temperature Analysis Algorithm\sample_data
 
 # Accepted video formats.
 Fmts: [ '.mp4', '.avi' ]

@@ -16,6 +16,7 @@ body temperature and local background temperature.
 - [Configuration](#configuration)
 - [Quick Start](#quick-start)
 - [Input Layout](#input-layout)
+- [Test Data](#test-data)
 - [Output Layout](#output-layout)
 - [Related Papers](#related-papers)
 - [GitHub Packaging Notes](#github-packaging-notes)
@@ -95,6 +96,29 @@ sample_data/
 ```
 
 Set `video_path` and `video_path2` in `config.yaml` to the corresponding files.
+
+## Test Data
+
+The repository-level `test_data/` directory includes a paired temperature
+preference sample:
+
+```text
+../test_data/Test-Tp-light.avi  # optical RGB / visible-light video
+../test_data/Test-Tp-IR.avi     # infrared video
+```
+
+Use these files as examples of the paired input videos expected by this
+workflow. In `config.yaml`, set the visible-light video as `video_path` and the
+infrared video as `video_path2`:
+
+```yaml
+video_path: ..\test_data\Test-Tp-light.avi
+video_path2: ..\test_data\Test-Tp-IR.avi
+```
+
+The two videos should be treated as a matched pair from the same assay. For new
+experiments, replace both paths with the corresponding visible-light and
+infrared recordings from the same run.
 
 ## Output Layout
 
